@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerAPI-Santander", "HackerAPI-Santander\HackerAPI-Santander.csproj", "{F950EFD5-1AF9-4DF0-A7DA-63AAA71B6725}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackerAPI-Santander", "HackerAPI-Santander\HackerAPI-Santander.csproj", "{F950EFD5-1AF9-4DF0-A7DA-63AAA71B6725}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerAPI-Santander-Tests", "HackerAPI-Santander-Tests\HackerAPI-Santander-Tests.csproj", "{51569572-D67B-4107-9B6E-D9B656BCC6A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F950EFD5-1AF9-4DF0-A7DA-63AAA71B6725}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F950EFD5-1AF9-4DF0-A7DA-63AAA71B6725}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F950EFD5-1AF9-4DF0-A7DA-63AAA71B6725}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51569572-D67B-4107-9B6E-D9B656BCC6A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51569572-D67B-4107-9B6E-D9B656BCC6A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51569572-D67B-4107-9B6E-D9B656BCC6A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51569572-D67B-4107-9B6E-D9B656BCC6A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

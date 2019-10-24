@@ -16,13 +16,6 @@ namespace HackerAPI_Santander.Controllers
     [ApiController]
     public class APIController : ControllerBase
     {
-        // GET: api/API
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
-
         [HttpGet]
         public async Task<JObject> ReturnBestStoriesAsync()
         {
