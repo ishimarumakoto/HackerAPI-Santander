@@ -24,7 +24,7 @@ namespace HackerAPI_Santander.Controllers
         //}
 
         [HttpGet]
-        public async Task<string> ReturnBestStoriesAsync()
+        public async Task<JObject> ReturnBestStoriesAsync()
         {
             //Get first best 20
             var requestBestStories = WebRequest.Create(@"https://hacker-news.firebaseio.com/v0/beststories.json");
@@ -44,7 +44,7 @@ namespace HackerAPI_Santander.Controllers
 
             //Pick The Value from the 20 bests
 
-            List<Post> listBest20 = new List<Post>;
+            List<Post> listBest20 = new List<Post>();
 
             foreach (var item in best20)
             {
@@ -61,12 +61,39 @@ namespace HackerAPI_Santander.Controllers
                 listBest20.Add(result);
 
             }
+            //Modify the list to reflect the json expected return
+
+            JArray bestPosts = new JArray();
+            foreach (var item in listBest20)
+            {
+                /*"title": "A uBlock Origin update was rejected from the Chrome Web Store",
+                "uri": "https://github.com/uBlockOrigin/uBlock-issues/issues/745",
+                "postedBy": "ismaildonmez",
+                "time": "2019-10-12T13:43:01+00:00",
+                "score": 1716,
+                "commentCount": 572*/
 
 
-            
+                //converting time ->
+                var dt = (new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).AddSeconds(Convert.ToDouble(item.time));
+                JObject postData = new JObject
+                {
+                    { "title", item.title },
+                    {"uri", item.url },
+                    {"postedBy", item.by },
+                    {"time", dt },
+                    {"score", item.score },
+                    {"coomentCount", item.descendants }
+                 };
+
+                bestPosts.Add(postData);
+
+            }
+            JObject jsonBestPosts = new JObject();
+            jsonBestPosts[""] = bestPosts;
 
 
-            return responseBestStorieseData.ToString();
+            return jsonBestPosts;
         }
 
 
