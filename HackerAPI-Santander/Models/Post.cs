@@ -7,12 +7,18 @@ namespace HackerAPI_Santander.Models
 {
     public class Post
     {
+        //title
         public string title { get; set; }
-        public string uri { get; set; }
-        public string postedBy { get; set; }
-        public DateTime time { get; set; }
+        //uri
+        public string url { get; set; }
+        //postedBy
+        public string by { get; set; }
+        //time in UNIX TIME - return as normal time
+        public string time { get; set; }
+        //score
         public int score { get; set; }
-        public int commentCount { get; set; }
+        //commentCount
+        public int descendants { get; set; }
 
 
     }
